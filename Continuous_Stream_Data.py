@@ -8,8 +8,8 @@ import requests
 import time
 import datetime
 
-f_name = input("dataset name:")
-f = open(f_name,"a")
+# f_name = input("dataset name:")
+f = open("bitcoin.csv", "a")
 keys = ["price_usd","24h_volume_usd","market_cap_usd","available_supply","total_supply","percent_change_1h","percent_change_24h","percent_change_7d"]
 vals = [0]*len(keys)
 
