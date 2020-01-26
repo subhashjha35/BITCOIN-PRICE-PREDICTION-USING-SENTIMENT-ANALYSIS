@@ -2,7 +2,7 @@ from flask import Flask, request, send_from_directory
 import io
 import pandas as pd
 app = Flask(__name__)
-from LSTM import get_prediction, get_multi_predict
+# from LSTM import get_prediction, get_multi_predict
 tasks = [
     {
         'id': 1,
@@ -17,8 +17,8 @@ tasks = [
         'done': False
     }
 ]
-get_prediction()
-get_multi_predict()
+# get_prediction()
+# get_multi_predict()
 p = io.StringIO()
 prediction = pd.read_csv('generated_data/prediction.csv', header = 0)
 prediction.to_csv(p, index=False)
