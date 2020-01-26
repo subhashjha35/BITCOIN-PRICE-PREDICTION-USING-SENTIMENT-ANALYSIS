@@ -15,16 +15,15 @@ import plotly.graph_objs as go
 import numpy as np
 import json
 import seaborn as sns
-# py.init_notebook_mode(connected=True)
-# get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 # In[4]:
 
 data1 = pd.read_csv("bitcoinprices.txt", names=['stamp', 'price'])
-data2 = pd.read_csv("sentiment6.txt", names=['stamp', 'sentiment'])
+data2 = pd.read_csv("sentiments.txt", names=['stamp', 'sentiment'])
 
-
+print(data1)
+exit(0)
 # In[5]:
 
 
