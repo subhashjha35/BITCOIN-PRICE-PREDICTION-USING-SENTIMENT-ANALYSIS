@@ -16,8 +16,8 @@ def main():
 
     # set path of csv file to save sentiment stats
     path = 'live_tweet.csv'
-    f = open(path,"a")
-    f1 = open('tweet_data','a')
+    f = open(path, "a")
+    f1 = open('tweet_data', 'a')
     # access twitter api via tweepy methods
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
@@ -38,9 +38,8 @@ def main():
         f.write("\n")
         f.flush()
         time.sleep(60)
-    
 
-def get_polarity(tweets,f):
+def get_polarity(tweets, f):
     # run polarity analysis on tweets
 
     tweet_polarity = []
