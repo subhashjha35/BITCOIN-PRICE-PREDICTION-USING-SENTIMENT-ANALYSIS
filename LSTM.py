@@ -182,17 +182,17 @@ yhat = model.predict(testX)
 
 # In[25]:
 
-get_prediction()
 yhat_inverse = scaler.inverse_transform(yhat.reshape(-1, 1))
 testY_inverse = scaler.inverse_transform(testY.reshape(-1, 1))
 
-# def get_prediction():
-print('get_prediction called')
-csvFile = open('generated_data/prediction.csv', 'w')
-prediction = pd.DataFrame([yhat_inverse.ravel(), testY_inverse])
-prediction.to_csv(r'generated_data/prediction.csv', index=None, header=0)
+def get_prediction():
+    print('get_prediction called')
+    csvFile = open('generated_data/prediction.csv', 'w')
+    prediction = pd.DataFrame([yhat_inverse.ravel(), testY_inverse.ravel()])
+    prediction.to_csv(r'generated_data/prediction.csv', index=None)
 # In[26]:
 
+get_prediction()
 
 rmse = sqrt(mean_squared_error(testY_inverse, yhat_inverse))
 print('Test RMSE: %.3f' % rmse)
@@ -360,12 +360,12 @@ print('Test RMSE: %.3f' % rmse)
 
 # In[ ]:
 
-# def get_multi_predict():
-print('multi_predict called')
-csvFile = open('generated_data/prediction_multi.csv', 'w')
-prediction = pd.DataFrame([predictDates.ravel(), inv_y, inv_yhat, yhat_reshape])
-prediction.to_csv(r'generated_data/prediction_multi.csv', index=None, header=0)
+def get_multi_predict():
+    print('multi_predict called')
+    csvFile = open('generated_data/prediction_multi.csv', 'w')
+    prediction = pd.DataFrame([predictDates.ravel(), inv_y, inv_yhat, yhat_reshape])
+    prediction.to_csv(r'generated_data/prediction_multi.csv', index=None, header=0)
 
-# get_multi_predict()
+get_multi_predict()
 
 
